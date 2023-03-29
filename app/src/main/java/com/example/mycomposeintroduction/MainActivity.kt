@@ -107,12 +107,12 @@ fun Footer(modifier: Modifier = Modifier) {
             .fillMaxWidth()
             .height(1.dp)
             .background(color = Color.White))
-        FooterRow(text = "m00nl1ght12", image = R.drawable.github)
+        FooterRow(text = "github.com/m00nl1ght12", image = R.drawable.github)
         Divider(modifier = Modifier
             .fillMaxWidth()
             .height(1.dp)
             .background(color = Color.White))
-        FooterRow(text = "Angelica Magnifico", image = R.drawable.linkedin, )
+        FooterRow(text = "in/angelicamagnifico", image = R.drawable.linkedin, )
         Divider(modifier = Modifier
             .fillMaxWidth()
             .height(1.dp)
