@@ -20,6 +20,8 @@ In the bottom part of the screen, instead, you will find [my social link](https:
 
 If you change the screen orientation, the screen content will remain unchanged, but not the layout. When you rotate the device, infact, 
 you'll notice that the image and the personal info are displayed on the left side of the screen. The social links, instead, will be displayed on the right. 
-So.. here we are, this is my simple project. Just so you know, this is not the final version, I have some ideas to update and upgrade my virtual CV. **STAY TUNED!**
+So.. here we are, this is my simple project. Just so you know, this is not the final version, I have some ideas to update and upgrade my virtual CV. 
+
+**STAY TUNED!**
 
 
