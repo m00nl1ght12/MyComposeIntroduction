@@ -7,6 +7,7 @@
 > this is a simple introduction, my virtual CV.
 
 ![Screenshot 1 -> Vertical Orientation](https://lh3.googleusercontent.com/drive-viewer/AAOQEORfKEqRcHuINVE1adhWo4nbxzOvClKRx0S4XE1OIub845h-QK8Y9Mp-qSHZPmltHntHjNK2Abwuyt5ylE-uu_PcBO4OAg=s1600 "Screenshot 1 -> Vertical Orientation")
+
 ***Vertical Orientation Layout***
 
 Running the app you can see a colorful screen. Starting by the top of the screen you will notice a photo of myself, my name and my aspiration. 
