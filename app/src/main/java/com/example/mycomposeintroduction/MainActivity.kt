@@ -1,8 +1,10 @@
 package com.example.mycomposeintroduction
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Color.rgb
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -19,6 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -26,6 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat.startActivity
 import com.example.mycomposeintroduction.ui.theme.MyComposeIntroductionTheme
 
 class MainActivity : ComponentActivity() {
@@ -107,17 +111,17 @@ fun Footer(modifier: Modifier = Modifier) {
             .fillMaxWidth()
             .height(1.dp)
             .background(color = Color.White))
-        FooterRow(text = "github.com/m00nl1ght12", image = R.drawable.github)
+        FooterRow(text = R.string.github_id, image = R.drawable.github,)
         Divider(modifier = Modifier
             .fillMaxWidth()
             .height(1.dp)
             .background(color = Color.White))
-        FooterRow(text = "in/angelicamagnifico", image = R.drawable.linkedin, )
+        FooterRow(text = R.string.linkedin_id, image = R.drawable.linkedin, )
         Divider(modifier = Modifier
             .fillMaxWidth()
             .height(1.dp)
             .background(color = Color.White))
-        FooterRow(text = "angelica.magnifico.am96@gmail.com", image = R.drawable.email_symbol_png_transparent)
+        FooterRow(text = R.string.e_mail, image = R.drawable.email_symbol_png_transparent)
         Divider(modifier = Modifier
             .fillMaxWidth()
             .height(1.dp)
@@ -126,11 +130,19 @@ fun Footer(modifier: Modifier = Modifier) {
         
     }
 }
+/*
+@Composable
+fun openWebPage(url: String) {
+    val webpage: Uri = Uri.parse(url)
+    val intent = Intent(Intent.ACTION_VIEW, webpage)
+    startActivity(intent)
+} */
 
 @Composable
 fun FooterRow(
-    text : String,
+    text : Int,
     image : Int,
+   // onTextClick : () -> Unit
 
 ) {
     Row(verticalAlignment = Alignment.Bottom) {
@@ -138,7 +150,7 @@ fun FooterRow(
             .size(30.dp)
             .padding(end = 3.dp)
             .align(Alignment.CenterVertically), painter = painterResource(id = image) , contentDescription = null, colorFilter = ColorFilter.tint(Color(rgb(215, 197, 233))))
-        Text(text = text, color = Color.White, fontWeight = FontWeight.Light, fontSize = 18.sp, modifier = Modifier.padding(8.dp), fontFamily = secondFont)
+        Text(stringResource(id = text), color = Color.White, fontWeight = FontWeight.Light, fontSize = 18.sp, modifier = Modifier.padding(8.dp), fontFamily = secondFont)
         
     }
 }
