@@ -14,6 +14,7 @@ Running the app you can see a colorful screen. Starting by the top of the screen
 In the bottom part of the screen, instead, you will find [my social link](https://www.linkedin.com/in/angelica-magnifico-4a995425b/) , [my github link](https://github.com/m00nl1ght12) ( *Take a look !* ) and then my email address : <angelica.magnifico.am96@gmail.com>.
 
 ![Screenshot 1 -> Vertical Orientation](https://drive.google.com/uc?id=1ZNfA9QlxSdQI2IK78LOm2t0bvSUg1aVH "Screenshot 1 -> Vertical Orientation")
+
 ***Horizontal Orientation Layout***
 
 
