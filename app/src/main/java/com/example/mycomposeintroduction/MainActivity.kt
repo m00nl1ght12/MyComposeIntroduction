@@ -1,7 +1,7 @@
 package com.example.mycomposeintroduction
 
-import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Color.rgb
 import android.net.Uri
@@ -10,16 +10,19 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Divider
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
@@ -111,17 +114,22 @@ fun Footer(modifier: Modifier = Modifier) {
             .fillMaxWidth()
             .height(1.dp)
             .background(color = Color.White))
-        FooterRow(text = R.string.github_id, image = R.drawable.github,)
+        FooterRow(text = R.string.github_id, image = R.drawable.github, modifier.clickable { openWebPage(url = "mailto:angelica_magnifico_am_96@gmail.com") } )
         Divider(modifier = Modifier
             .fillMaxWidth()
             .height(1.dp)
             .background(color = Color.White))
-        FooterRow(text = R.string.linkedin_id, image = R.drawable.linkedin, )
+        FooterRow(
+            text = R.string.linkedin_id,
+            image = R.drawable.linkedin, modifier.clickable { openWebPage(url = "https://www.linkedin.com/in/angelicamagnifico/") } )
         Divider(modifier = Modifier
             .fillMaxWidth()
             .height(1.dp)
             .background(color = Color.White))
-        FooterRow(text = R.string.e_mail, image = R.drawable.email_symbol_png_transparent)
+        FooterRow(
+            text = R.string.e_mail,
+            image = R.drawable.email_symbol_png_transparent, modifier.clickable { openWebPage(url = "mailto:angelica_magnifico_am_96@gmail.com") }
+        )
         Divider(modifier = Modifier
             .fillMaxWidth()
             .height(1.dp)
@@ -130,30 +138,28 @@ fun Footer(modifier: Modifier = Modifier) {
         
     }
 }
-/*
-@Composable
-fun openWebPage(url: String) {
-    val webpage: Uri = Uri.parse(url)
-    val intent = Intent(Intent.ACTION_VIEW, webpage)
-    startActivity(intent)
-} */
+
+
 
 @Composable
 fun FooterRow(
-    text : Int,
-    image : Int,
-   // onTextClick : () -> Unit
+    text: Int,
+    image: Int,
+    clickable : Modifier
 
-) {
+    ) {
     Row(verticalAlignment = Alignment.Bottom) {
         Image(modifier = Modifier
             .size(30.dp)
             .padding(end = 3.dp)
             .align(Alignment.CenterVertically), painter = painterResource(id = image) , contentDescription = null, colorFilter = ColorFilter.tint(Color(rgb(215, 197, 233))))
-        Text(stringResource(id = text), color = Color.White, fontWeight = FontWeight.Light, fontSize = 18.sp, modifier = Modifier.padding(8.dp), fontFamily = secondFont)
+        Text(stringResource(id = text), color = Color.White, fontWeight = FontWeight.Light, fontSize = 18.sp, modifier = Modifier
+            .padding(8.dp),fontFamily = secondFont)
         
     }
 }
+
+
 
 val firstFont = FontFamily(
         Font(
@@ -171,6 +177,15 @@ val secondFont = FontFamily(
     )
 )
 
+@Composable
+fun openWebPage(url: String) {
+    val localContext = LocalContext.current
+    val webpage: Uri = Uri.parse(url)
+    val intent = Intent(Intent.ACTION_VIEW, webpage)
+    if (intent.resolveActivity(PackageManager) != null) {
+        startActivity(intent)
+    }
+}
 
 
 @Composable
@@ -190,7 +205,7 @@ fun Header(
 }
 
 
-//@SuppressLint("SwitchIntDef")
+
 @Preview
 @Preview()
 @Composable
