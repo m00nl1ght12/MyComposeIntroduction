@@ -1,7 +1,7 @@
 package com.example.mycomposeintroduction
 
+import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Color.rgb
 import android.net.Uri
@@ -16,7 +16,6 @@ import androidx.compose.material.Divider
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -32,7 +31,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.content.ContextCompat.startActivity
 import com.example.mycomposeintroduction.ui.theme.MyComposeIntroductionTheme
 
 class MainActivity : ComponentActivity() {
@@ -64,7 +62,7 @@ fun ComposeIntroduction(
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
-            Row(modifier = Modifier.fillMaxSize()) {
+            Row(modifier = Modifier.fillMaxSize(), verticalAlignment = Alignment.CenterVertically) {
                 Box(
                     modifier = Modifier
                         .weight(.5f)
@@ -109,26 +107,28 @@ fun ComposeIntroduction(
 
 @Composable
 fun Footer(modifier: Modifier = Modifier) {
+    val localContext = LocalContext.current
     Column(modifier = modifier.padding(bottom = 30.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         Divider(modifier = Modifier
             .fillMaxWidth()
             .height(1.dp)
             .background(color = Color.White))
-        FooterRow(text = R.string.github_id, image = R.drawable.github, modifier.clickable { openWebPage(url = "mailto:angelica_magnifico_am_96@gmail.com") } )
+        FooterRow(text = R.string.github_id, image = R.drawable.github, Modifier.clickable { openWebPage(localContext, url = "https://github.com/m00nl1ght12")  } )
         Divider(modifier = Modifier
             .fillMaxWidth()
             .height(1.dp)
             .background(color = Color.White))
         FooterRow(
             text = R.string.linkedin_id,
-            image = R.drawable.linkedin, modifier.clickable { openWebPage(url = "https://www.linkedin.com/in/angelicamagnifico/") } )
+            image = R.drawable.linkedin, Modifier.clickable { openWebPage(localContext, url = "https://www.linkedin.com/in/angelicamagnifico/") } )
         Divider(modifier = Modifier
             .fillMaxWidth()
             .height(1.dp)
             .background(color = Color.White))
         FooterRow(
             text = R.string.e_mail,
-            image = R.drawable.email_symbol_png_transparent, modifier.clickable { openWebPage(url = "mailto:angelica_magnifico_am_96@gmail.com") }
+            image = R.drawable.email_symbol_png_transparent, Modifier.clickable { openWebPage(localContext, url = "mailto:angelica_magnifico_am_96@gmail.com") }
+
         )
         Divider(modifier = Modifier
             .fillMaxWidth()
@@ -145,16 +145,17 @@ fun Footer(modifier: Modifier = Modifier) {
 fun FooterRow(
     text: Int,
     image: Int,
-    clickable : Modifier
+    modifier : Modifier
 
     ) {
-    Row(verticalAlignment = Alignment.Bottom) {
+    Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
         Image(modifier = Modifier
             .size(30.dp)
             .padding(end = 3.dp)
             .align(Alignment.CenterVertically), painter = painterResource(id = image) , contentDescription = null, colorFilter = ColorFilter.tint(Color(rgb(215, 197, 233))))
         Text(stringResource(id = text), color = Color.White, fontWeight = FontWeight.Light, fontSize = 18.sp, modifier = Modifier
-            .padding(8.dp),fontFamily = secondFont)
+            .padding(8.dp)
+            .align(Alignment.CenterVertically),fontFamily = secondFont)
         
     }
 }
@@ -177,14 +178,10 @@ val secondFont = FontFamily(
     )
 )
 
-@Composable
-fun openWebPage(url: String) {
-    val localContext = LocalContext.current
+fun openWebPage(localContext: Context, url: String) {
     val webpage: Uri = Uri.parse(url)
     val intent = Intent(Intent.ACTION_VIEW, webpage)
-    if (intent.resolveActivity(PackageManager) != null) {
-        startActivity(intent)
-    }
+    localContext.startActivity(intent)
 }
 
 
