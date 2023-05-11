@@ -84,9 +84,9 @@ fun AboutHeader(modifier: Modifier){
                 fontSize = 70.sp,
                 modifier = Modifier
                     .align(alignment = Alignment.CenterVertically)
-                    .padding(start = 28.dp)
-                    ,
-                fontFamily = secondFont)
+                    .padding(start = 28.dp),
+                fontFamily = secondFont
+            )
         }
         
     }
