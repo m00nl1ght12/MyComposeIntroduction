@@ -77,7 +77,7 @@ fun ComposeIntroduction(
                         .fillMaxSize()
                         .background(color = Color(rgb(110, 1, 82))), Alignment.Center
                 ) {
-                    Footer(modifier = Modifier.padding(top = 40.dp))
+                    Footer(modifier = Modifier.padding(top = 30.dp))
                 }
             }
         }
@@ -87,7 +87,7 @@ fun ComposeIntroduction(
                     modifier = Modifier
                         .weight(.5f)
                         .fillMaxSize()
-                        .padding(top = 120.dp)
+                        .padding(top = 100.dp)
                         .background(color = Color((rgb(110, 1, 82)))), Alignment.Center
                 ) {
                     Header(modifier = Modifier.fillMaxSize())
@@ -98,7 +98,7 @@ fun ComposeIntroduction(
                         .fillMaxSize()
                         .background(color = Color((rgb(110, 1, 82)))), Alignment.BottomCenter
                 ) {
-                    Footer(modifier = Modifier.padding(bottom = 10.dp))
+                    Footer(modifier = Modifier.padding(bottom = 5.dp))
                 }
             }
         }
@@ -226,7 +226,7 @@ fun DefaultPreview()
                             .fillMaxSize()
                             .background(color = Color(rgb(110, 1, 82))), Alignment.Center
                     ) {
-                        Footer(modifier = Modifier.padding(top = 40.dp))
+                        Footer(modifier = Modifier.padding(top = 30.dp))
                     }
                 }
             }
