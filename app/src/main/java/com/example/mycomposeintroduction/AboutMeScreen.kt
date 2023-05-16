@@ -23,17 +23,27 @@ import org.w3c.dom.Text
 @Composable
 fun AboutMeScreen (
     modifier: Modifier = Modifier
-) = Surface(color = (Color(rgb(110, 1, 82)).copy(alpha = 0.2f))){
+) = Surface(color = (Color(rgb(110, 1, 82)))){
     Column (modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
         Row(modifier = Modifier
-            .weight(.2f)
+            .weight(.1f)
             .fillMaxSize()) {
-            AboutHeader(modifier = Modifier.fillMaxSize())
+            AboutMe(modifier = Modifier.fillMaxSize())
             }
         Row(modifier = Modifier
-            .weight(.5f)
+            .weight(.4f)
             .fillMaxSize()) {
-            AboutFooter(modifier = Modifier.fillMaxSize())
+            AboutMeDescription(modifier = Modifier.fillMaxSize())
+        }
+        Row(modifier = Modifier
+            .weight(.1f)
+            .wrapContentSize()) {
+            HardSkills(modifier = Modifier)
+        }
+        Row(modifier = Modifier
+            .weight(.4f)
+            .fillMaxSize()) {
+            HardSkillsDescription(modifier = Modifier.fillMaxSize())
         }
     }
 }
@@ -42,7 +52,7 @@ fun AboutMeScreen (
 
 
 @Composable
-fun AboutFooter (modifier: Modifier) {
+fun AboutMeDescription (modifier: Modifier) {
     Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
         Text(text = "Sono una appassionata di tecnologia, \n" +
                     "ho di recente intrapreso un percorso di studio \n" +
@@ -56,11 +66,11 @@ fun AboutFooter (modifier: Modifier) {
                     "nell’IT vista la mia creatività e la mia voglia \n" +
                     "di conoscere ancora più a fondo un mondo \n" +
                     "sempre in evoluzione.\n",
-            color = Color.Gray,
+            color = Color.White,
             fontWeight = FontWeight.Light,
             fontSize = 20.sp,
             modifier = Modifier
-                .padding(all = 8.dp)
+                .padding(top = 8.dp)
                 .align(Alignment.CenterHorizontally),
             fontFamily = secondFont
         )
@@ -69,17 +79,18 @@ fun AboutFooter (modifier: Modifier) {
 }
     
 @Composable
-fun AboutHeader(modifier: Modifier){
+fun AboutMe(modifier: Modifier){
     Column(modifier = modifier, verticalArrangement = Arrangement.Center) {
         Row(modifier = Modifier
             .fillMaxSize()
             .wrapContentHeight()
+            .padding(top = 13.dp)
             .align(Alignment.CenterHorizontally)
-            .background(Color.White.copy(alpha = 0.2F)),
+            .background(Color.White.copy(alpha = 0.5F)),
         ) {
             Text(
-                text = "CHI SONO",
-                color = Color.Gray,
+                text = stringResource(id = R.string.chi_sono_id),
+                color = Color.White,
                 fontWeight = FontWeight.Light,
                 fontSize = 70.sp,
                 modifier = Modifier
@@ -89,5 +100,84 @@ fun AboutHeader(modifier: Modifier){
             )
         }
         
+    }
+}
+
+@Composable
+fun HardSkillsDescription(modifier: Modifier) {
+    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(
+            text = "• Conoscenza base di Kotlin, Java, JetPack Compose, HTML, CSS",
+            color = Color.White,
+            fontWeight = FontWeight.Light,
+            fontSize = 20.sp,
+            modifier = Modifier
+                .padding(top = 8.dp)
+                .align(Alignment.CenterHorizontally),
+            fontFamily = secondFont
+        )
+        Spacer(
+            modifier = Modifier.height(10.dp)
+        )
+        Text(
+            text = "• Microsoft Word, Power Point",
+            color = Color.White,
+            fontWeight = FontWeight.Light,
+            fontSize = 20.sp,
+            modifier = Modifier
+                .padding(top = 8.dp)
+                .align(Alignment.CenterHorizontally),
+            fontFamily = secondFont
+        )
+        Spacer(
+            modifier = Modifier.height(10.dp)
+        )
+        Text(
+            text = "• Suite Adobe (Photoshop, InDesign, Bridge, Premiere)",
+            color = Color.White,
+            fontWeight = FontWeight.Light,
+            fontSize = 20.sp,
+            modifier = Modifier
+                .padding(top = 8.dp)
+                .align(Alignment.CenterHorizontally),
+            fontFamily = secondFont
+        )
+        Spacer(
+            modifier = Modifier.height(10.dp)
+        )
+        Text(
+            text = "• Editing foto e video",
+            color = Color.White,
+            fontWeight = FontWeight.Light,
+            fontSize = 20.sp,
+            modifier = Modifier
+                .padding(top = 8.dp)
+                .align(Alignment.CenterHorizontally),
+            fontFamily = secondFont
+        )
+    }
+}
+
+@Composable
+fun HardSkills(modifier: Modifier) {
+    Column(modifier = modifier, verticalArrangement = Arrangement.Center) {
+        Row(modifier = Modifier
+            .fillMaxSize()
+            .wrapContentHeight()
+            .align(Alignment.CenterHorizontally)
+            .background(Color.White.copy(alpha = 0.5F)),
+        ) {
+            Text(
+                text = "HARD SKILLS",
+                color = Color.White,
+                fontWeight = FontWeight.Light,
+                fontSize = 70.sp,
+                modifier = Modifier
+                    .align(alignment = Alignment.CenterVertically)
+                    .padding(start = 28.dp),
+                fontFamily = secondFont
+            )
+        }
+
     }
 }
