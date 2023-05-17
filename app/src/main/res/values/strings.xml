@@ -3,5 +3,13 @@
     <string name="github_id">github.com/m00nl1ght12</string>
     <string name="linkedin_id">in/angelicamagnifico</string>
     <string name="e_mail">angelica.magnifico.am96@gmail.com</string>
+    <string name="about_me_description">Sono una appassionata di tecnologia ho di recente intrapreso un percorso di studio sulla programmazione ed i suoi linguaggi. Ho partecipato ad eventi come il GDG DevFest, il Bootcamp Puglia Women Code, dove ho avuto modo di osservare più da vicino questo mondo, conoscendo e ascoltando gli sviluppatori degli ambiti più disparati. Sono convinta di voler intraprendere un percorso nell’IT vista la mia creatività e la mia voglia di conoscere ancora più a fondo un mondo sempre in evoluzione.</string>
     <string name="chi_sono_id">CHI SONO</string>
+    <string name="soft_skills_label">SOFT SKILLS</string>
+    <string name="lavoro_di_squadra">• Predisposizione al lavoro di squadra</string>
+    <string name="pensiero_analitico">• Pensiero analitico e capacità di problem solving</string>
+    <string name="gestione_tempo">• Capacità di gestione del tempo</string>
+    <string name="motivazione">• Forte motivazione e attitudine propositiva</string>
+    <string name="organizzazione">• Capacità organizzative e di pianificazione</string>
+    <string name="strumenti_informatici">• Uso dei principali strumenti informatici</string>
 </resources>
