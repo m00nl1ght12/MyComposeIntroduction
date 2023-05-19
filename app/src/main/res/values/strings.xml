@@ -6,10 +6,35 @@
     <string name="about_me_description">Sono una appassionata di tecnologia ho di recente intrapreso un percorso di studio sulla programmazione ed i suoi linguaggi. Ho partecipato ad eventi come il GDG DevFest, il Bootcamp Puglia Women Code, dove ho avuto modo di osservare più da vicino questo mondo, conoscendo e ascoltando gli sviluppatori degli ambiti più disparati. Sono convinta di voler intraprendere un percorso nell’IT vista la mia creatività e la mia voglia di conoscere ancora più a fondo un mondo sempre in evoluzione.</string>
     <string name="chi_sono_id">CHI SONO</string>
     <string name="soft_skills_label">SOFT SKILLS</string>
+    <string name="hard_skills_label">HARD SKILLS</string>
+    <string name="work_experience_label">  ESPERIENZE PROFESSIONALI</string>
+    <string name="education_and_training_label">ISTRUZIONE E FORMAZIONE</string>
     <string name="lavoro_di_squadra">• Predisposizione al lavoro di squadra</string>
     <string name="pensiero_analitico">• Pensiero analitico e capacità di problem solving</string>
     <string name="gestione_tempo">• Capacità di gestione del tempo</string>
     <string name="motivazione">• Forte motivazione e attitudine propositiva</string>
     <string name="organizzazione">• Capacità organizzative e di pianificazione</string>
     <string name="strumenti_informatici">• Uso dei principali strumenti informatici</string>
+    <string name="conoscenza_informatica">• Conoscenza base di Kotlin, Java, JetPack Compose, HTML, CSS</string>
+    <string name="conoscenza_lingua">• Conoscenza della lingua inglese</string>
+    <string name="conoscenza_microsoft">• Microsoft Word, Power Point</string>
+    <string name="conoscenza_suite_adobe">• Suite Adobe (Photoshop, InDesign, Bridge, Premiere)</string>
+    <string name="conoscenza_fotogtafica">• Editing foto e video</string>
+    <string name="education_year">2015</string>
+    <string name="education_type">Diploma di Maturità artistica | Audiovisivo e multimediale</string>
+    <string name="school_name">I.I.S.S. "Luigi Russo", Monopoli</string>
+    <string name="puglia_women_code">Dal 21/04/2023 al 23/04/2023 Bootcamp Puglia Women Code presso Puglia Women Lead.</string>
+    <string name="abilità_puglia_women_code">Abilità/Capacità acquisite:</string>
+    <string name="progettazione_sito_web">• Progettazione e sviluppo di un sito web;</string>
+    <string name="linguaggi_web">• Linguaggio HTML/CSS + JQuery;</string>
+    <string name="lavoro_team">• Lavoro in team</string>
+    <string name="compose_camp">18/04/23, 23/05/23 Compose Camp presso GDG Bari.</string>
+    <string name="abilità_compose_camp">Abilità/Capacità acquisite:</string>
+    <string name="kotlin_basics">• Kotlin basi e concetti chiave;</string>
+    <string name="jetpack_compose">• Creazione di layout con JetPack Compose;</string>
+    <string name="corso_web_design">Dal 05/2021 al 05/2021 Corso di Web Design presso Woom Italia.</string>
+    <string name="abilità_web_design">Abilità/Capacità acquisite:</string>
+    <string name="sviluppo_sito_web">• Pregettazione e sviluppo di un sito web;</string>
+    <string name="linguaggi_corso_web">• Linguaggio HTML/ CSS / MySQL.</string>
+
 </resources>

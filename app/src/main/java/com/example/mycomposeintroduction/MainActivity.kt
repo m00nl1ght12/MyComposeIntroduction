@@ -8,13 +8,14 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Divider
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -31,6 +32,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
 import com.example.mycomposeintroduction.ui.theme.MyComposeIntroductionTheme
 
 class MainActivity : ComponentActivity() {
@@ -47,7 +49,37 @@ class MainActivity : ComponentActivity() {
                         .fillMaxSize()
                         .wrapContentSize()) {
                         ComposeIntroduction(modifier = Modifier.fillMaxSize())
-                        
+                    }
+                    val navController = rememberNavController()
+                    Scaffold(
+                        bottomBar = {
+                            BottomNavigationBar(
+                                items = listOf(
+                                    BottomNavItem(
+                                        name = "Home",
+                                        route = "home",
+                                        icon = Icons.Default.Home
+                                    ),
+                                    BottomNavItem(
+                                        name = "Profile",
+                                        route = "profile",
+                                        icon = Icons.Default.AccountCircle
+                                    ),
+                                    BottomNavItem(
+                                        name = "Job",
+                                        route = "job",
+                                        icon = Icons.Default.Work
+                                    )
+                                ),
+                                navController = navController,
+                                onItemClick = {
+                                    navController.navigate(it.route)
+                                }
+                            )
+                        }
+                    ) {
+                        Navigation(navController = navController)
+                        it
                     }
                 }
             }
@@ -98,7 +130,7 @@ fun ComposeIntroduction(
                         .fillMaxSize()
                         .background(color = Color((rgb(110, 1, 82)))), Alignment.BottomCenter
                 ) {
-                    Footer(modifier = Modifier.padding(bottom = 5.dp))
+                    Footer(modifier = Modifier.padding(bottom = 30.dp))
                 }
             }
         }
@@ -130,10 +162,6 @@ fun Footer(modifier: Modifier = Modifier) {
             image = R.drawable.email_symbol_png_transparent, Modifier.clickable { openWebPage(localContext, url = "mailto:angelica_magnifico_am_96@gmail.com") }
 
         )
-        Divider(modifier = Modifier
-            .fillMaxWidth()
-            .height(1.dp)
-            .background(color = Color.White))
 
         
     }

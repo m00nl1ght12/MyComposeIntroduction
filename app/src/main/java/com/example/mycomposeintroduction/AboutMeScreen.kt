@@ -183,70 +183,75 @@ fun SoftSkills(modifier: Modifier = Modifier) {
 }
 
 
-        @Composable
-        fun HardSkillsDescription(modifier: Modifier = Modifier) {
-            Column(
-                modifier = modifier
-                    .padding(horizontal = 28.dp)
-                    .padding(top = 18.dp, bottom = 30.dp),
-                verticalArrangement = Arrangement.spacedBy(10.dp)
-            ) {
-                Text(
-                    text = "• Conoscenza base di Kotlin, Java, JetPack Compose, HTML, CSS",
-                    color = Color.White,
-                    fontWeight = FontWeight.Light,
-                    fontSize = 20.sp,
-                    fontFamily = secondFont
-                )
-                Text(
-                    text = "• Microsoft Word, Power Point",
-                    color = Color.White,
-                    fontWeight = FontWeight.Light,
-                    fontSize = 20.sp,
-                    fontFamily = secondFont
-                )
-                Text(
-                    text = "• Suite Adobe (Photoshop, InDesign, Bridge, Premiere)",
-                    color = Color.White,
-                    fontWeight = FontWeight.Light,
-                    fontSize = 20.sp,
-                    fontFamily = secondFont
-                )
-                Text(
-                    text = "• Editing foto e video",
-                    color = Color.White,
-                    fontWeight = FontWeight.Light,
-                    fontSize = 20.sp,
-                    fontFamily = secondFont
-                )
+@Composable
+fun HardSkillsDescription(modifier: Modifier = Modifier) {
+    Column(
+        modifier = modifier
+            .padding(horizontal = 28.dp)
+            .padding(top = 18.dp, bottom = 80.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp)
+    ) {
+        Text(
+            text = stringResource(id = R.string.conoscenza_informatica),
+            color = Color.White,
+            fontWeight = FontWeight.Light,
+            fontSize = 20.sp,
+            fontFamily = secondFont
+        )
+        Text(
+            text = stringResource(id = R.string.conoscenza_lingua),
+            color = Color.White,
+            fontWeight = FontWeight.Light,
+            fontSize = 20.sp,
+            fontFamily = secondFont
+        )
+        Text(
+            text = stringResource(id = R.string.conoscenza_microsoft),
+            color = Color.White,
+            fontWeight = FontWeight.Light,
+            fontSize = 20.sp,
+            fontFamily = secondFont
+        )
+        Text(
+            text = stringResource(id = R.string.conoscenza_suite_adobe),
+            color = Color.White,
+            fontWeight = FontWeight.Light,
+            fontSize = 20.sp,
+            fontFamily = secondFont
+        )
+        Text(
+            text = stringResource(id = R.string.conoscenza_fotogtafica),
+            color = Color.White,
+            fontWeight = FontWeight.Light,
+            fontSize = 20.sp,
+            fontFamily = secondFont
+        )
 
-            }
-        }
-
-
-        @Composable
-        fun HardSkills(modifier: Modifier) {
-            Column(modifier = modifier, verticalArrangement = Arrangement.Center) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(top = 18.dp)
-                        .align(Alignment.CenterHorizontally)
-                        .background(Color.White.copy(alpha = 0.5F)),
-                ) {
-                    Text(
-                        text = "HARD SKILLS",
-                        color = Color.White,
-                        fontWeight = FontWeight.Light,
-                        fontSize = 70.sp,
-                        modifier = Modifier
-                            .align(alignment = Alignment.CenterVertically)
-                            .padding(start = 28.dp),
-                        fontFamily = secondFont
-                    )
-                }
+    }
+}
 
 
+@Composable
+fun HardSkills(modifier: Modifier) {
+    Column(modifier = modifier, verticalArrangement = Arrangement.Center) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 18.dp)
+                .align(Alignment.CenterHorizontally)
+                .background(Color.White.copy(alpha = 0.5F)),
+        ) {
+            Text(
+                text = stringResource(id = R.string.hard_skills_label),
+                color = Color.White,
+                fontWeight = FontWeight.Light,
+                fontSize = 70.sp,
+                modifier = Modifier
+                    .align(alignment = Alignment.CenterVertically)
+                    .padding(start = 28.dp),
+                fontFamily = secondFont
+            )
         }
     }
+}
 
