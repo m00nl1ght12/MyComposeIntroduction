@@ -78,7 +78,7 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                     ) {
-                        Navigation(navController = navController)
+                        Navigation(modifier = Modifier.padding(it), navController = navController)
                         it
                     }
                 }
@@ -94,7 +94,7 @@ fun ComposeIntroduction(
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
-            Row(modifier = Modifier.fillMaxSize(), verticalAlignment = Alignment.CenterVertically) {
+            Row(modifier = modifier.fillMaxSize(), verticalAlignment = Alignment.CenterVertically) {
                 Box(
                     modifier = Modifier
                         .weight(.5f)
@@ -109,28 +109,34 @@ fun ComposeIntroduction(
                         .fillMaxSize()
                         .background(color = Color(rgb(110, 1, 82))), Alignment.Center
                 ) {
-                    Footer(modifier = Modifier.padding(top = 30.dp))
+                    Column {
+                        Footer(modifier = Modifier.padding(top = 30.dp))
+                        Divider(modifier = Modifier
+                            .fillMaxWidth()
+                            .height(1.dp)
+                            .background(color = Color.White))
+                    }
+
                 }
             }
         }
         else -> {
-            Column(modifier = Modifier) {
+            Column(modifier = modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
                 Box(
                     modifier = Modifier
-                        .weight(.5f)
-                        .fillMaxSize()
-                        .padding(top = 100.dp)
+                        .fillMaxWidth()
+                        .weight(1f)
+                        .wrapContentSize()
                         .background(color = Color((rgb(110, 1, 82)))), Alignment.Center
                 ) {
-                    Header(modifier = Modifier.fillMaxSize())
+                    Header(modifier = Modifier)
                 }
                 Box(
                     modifier = Modifier
-                        .weight(.5f)
-                        .fillMaxSize()
+                        .fillMaxWidth()
                         .background(color = Color((rgb(110, 1, 82)))), Alignment.BottomCenter
                 ) {
-                    Footer(modifier = Modifier.padding(bottom = 30.dp))
+                    Footer(modifier = Modifier.padding(bottom = 10.dp))
                 }
             }
         }
@@ -140,7 +146,7 @@ fun ComposeIntroduction(
 @Composable
 fun Footer(modifier: Modifier = Modifier) {
     val localContext = LocalContext.current
-    Column(modifier = modifier.padding(bottom = 30.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
         Divider(modifier = Modifier
             .fillMaxWidth()
             .height(1.dp)
@@ -160,8 +166,8 @@ fun Footer(modifier: Modifier = Modifier) {
         FooterRow(
             text = R.string.e_mail,
             image = R.drawable.email_symbol_png_transparent, Modifier.clickable { openWebPage(localContext, url = "mailto:angelica_magnifico_am_96@gmail.com") }
-
         )
+
 
         
     }
@@ -264,7 +270,7 @@ fun DefaultPreview()
                         modifier = Modifier
                             .weight(.5f)
                             .fillMaxSize()
-                            .padding(top = 120.dp)
+                            .padding(top = 100.dp)
                             .background(color = Color((rgb(110, 1, 82)))), Alignment.Center
                     ) {
                         Header(modifier = Modifier.fillMaxSize())

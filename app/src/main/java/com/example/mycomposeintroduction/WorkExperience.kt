@@ -69,7 +69,7 @@ fun EducationAndTraining(modifier: Modifier = Modifier) {
 
 @Composable
 fun EducationAndTrainingDescription(modifier: Modifier = Modifier) {
-    Column(modifier = Modifier.padding(bottom = 80.dp)){
+    Column(modifier = Modifier.padding(bottom = 20.dp)){
         Text(
             text = stringResource(id = R.string.education_year),
             color = Color.White,

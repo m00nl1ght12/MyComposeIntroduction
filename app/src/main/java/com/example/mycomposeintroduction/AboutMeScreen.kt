@@ -188,7 +188,7 @@ fun HardSkillsDescription(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .padding(horizontal = 28.dp)
-            .padding(top = 18.dp, bottom = 80.dp),
+            .padding(top = 18.dp, bottom = 20.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
         Text(
