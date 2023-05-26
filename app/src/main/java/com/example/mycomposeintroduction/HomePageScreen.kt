@@ -105,8 +105,6 @@ fun Footer(modifier: Modifier = Modifier) {
             image = R.drawable.email_symbol_png_transparent, Modifier.clickable { openWebPage(localContext, url = "mailto:angelica_magnifico_am_96@gmail.com") }
         )
 
-
-
     }
 }
 
