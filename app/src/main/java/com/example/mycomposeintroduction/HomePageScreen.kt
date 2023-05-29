@@ -125,8 +125,8 @@ fun FooterRow(
         ))
         Text(
             stringResource(id = text), color = androidx.compose.ui.graphics.Color.White, fontWeight = FontWeight.Light, fontSize = 18.sp, modifier = Modifier
-            .padding(8.dp)
-            .align(Alignment.CenterVertically),fontFamily = secondFont)
+                .padding(8.dp)
+                .align(Alignment.CenterVertically),fontFamily = secondFont)
 
     }
 }
@@ -139,10 +139,10 @@ fun Header(
     Image(painter = painterResource(id = R.drawable.livello_0), contentDescription = null, modifier = Modifier
         .size(150.dp)
         .align(Alignment.CenterHorizontally))
-    Text(text = "Angelica Magnifico", color = androidx.compose.ui.graphics.Color.White, modifier = Modifier
+    Text(text = stringResource(id = R.string.first_name), color = androidx.compose.ui.graphics.Color.White, modifier = Modifier
         .align(Alignment.CenterHorizontally)
         .padding(top = 12.dp), fontSize = 30.sp, fontFamily = firstFont)
-    Text(text = "Aspiring Junior Android Developer", color = Color(android.graphics.Color.rgb(215, 197, 233)), modifier = Modifier
+    Text(text = stringResource(id = R.string.aspiring_task), color = Color(android.graphics.Color.rgb(215, 197, 233)), modifier = Modifier
         .align(Alignment.CenterHorizontally)
         .padding(top = 3.dp),
         fontFamily = secondFont, fontSize = 18.sp)

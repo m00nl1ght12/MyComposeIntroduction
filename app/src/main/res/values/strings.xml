@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">MyComposeIntroduction</string>
+    <string name="first_name">Angelica Magnifico</string>
+    <string name="aspiring_task">Aspiring Junior Android Developer</string>
     <string name="github_id">github.com/m00nl1ght12</string>
     <string name="linkedin_id">in/angelicamagnifico</string>
     <string name="e_mail">angelica.magnifico.am96@gmail.com</string>
